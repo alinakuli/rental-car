@@ -1,1 +1,36 @@
- 
+.header {
+    padding: 26px 120px;
+    width: 1440px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 104px;
+    height: 16px;
+}
+
+.nav {
+    width: 136px;
+    display: flex;
+    flex-direction: row;
+
+    gap: 32px;
+}
+
+.link {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    text-decoration-skip-ink: none;
+
+    color: var(--main);
+}
+
+.link:active {
+    color: var(--light-blue);
+}

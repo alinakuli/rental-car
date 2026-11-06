@@ -1,1 +1,37 @@
- 
+.card {
+    border-radius: 16px;
+    padding: 16px;
+    width: 276px;
+    height: 464px;
+
+    background: var(--white);
+}
+
+.image {
+    border-radius: 14px;
+    width: 244px;
+    height: 268px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 8px;
+    padding: 8px;
+    width: 244px;
+    height: 52px;
+
+    background: var(--bg);
+
+    font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 133%;
+        color: var(--main);
+}
+
+.location, .distance {
+    display: flex;
+    flex-direction: row;
+}

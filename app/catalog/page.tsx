@@ -1,5 +1,8 @@
-import CarCard from "@/components/catalog/CarCard/CarCard";
- 
+// import css from "./page.module.css"
+
+import CatalogView from "@/components/catalog/CatalogView/CatalogView";
+
 export default function Catalog() {
-    return <CarCard/>
+
+    return <CatalogView />
 }

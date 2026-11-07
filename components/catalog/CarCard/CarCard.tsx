@@ -1,34 +1,37 @@
 import css from "./CarCard.module.css"
+import type { Car } from "@/types/car"
+
+import Image from "next/image"
 
 // import Image from "next/image";
 
-export default function CarCard() {
-
-    // const image = "Image";
-    const model = "Model, Year";
-    const price = "50$";
-    const city = "City";
-    const country = "Country";
-    const rental = "Rental";
-    const km = "1000km";
+export default function CarCard({ car }: { car: Car }) {
 
     return (
         <div className={css.card}>
-            {/* <Image src='' alt={}/> */}
-            <div className={css.image}>text</div>
+            <Image
+                src={car.img}
+                alt={`An image of ${car.brand} ${car.model}`}
+                width={244}
+                height={268}
+                className={css.image}
+            />
             <div className={css.info}>
-                <p className={css.model}>{model}</p>
-                <p className={css.price}>{price}</p>
+
+                <div className={css.header}>
+                    <h3 className={css.title}>
+                        {car.brand} <span className={css.model}>{car.model}</span>, {car.year}
+                    </h3>
+                    <p className={css.price}>{car.rentalPrice}</p>
+                </div>
 
                 <div className={css.details}>
                     <ul className={css.location}>
-                        <li className={css.city}>{city}</li>
-                        <li className={css.country}>{country}</li>
-                        <li className={css.rental}>{rental}</li>
-                    </ul>
-                    <ul className={css.distance}>
-                        <li className={css.item}>Suv</li>
-                        <li className={css.distance}>{km}</li>
+                        <li className={css.item}>{car.location.city}</li>
+                        <li className={css.item}>{car.location.country}</li>
+                        <li className={css.item}>{car.location.address}</li>
+                        <li className={css.item}>{car.type}</li>
+                        <li className={css.item}>{car.mileage}</li>
                     </ul>
                 </div>
             </div>

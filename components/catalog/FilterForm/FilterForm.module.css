@@ -1,1 +1,11 @@
- 
+.form {
+    width: 924px;
+    margin: 0 auto 60px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* .row {
+
+} */

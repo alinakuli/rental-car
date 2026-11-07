@@ -1,11 +1,116 @@
 .form {
     width: 924px;
-    margin: 0 auto 60px;
+    margin: 0 auto 40px;
 
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
-/* .row {
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
 
-} */
+    margin-bottom: 8px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 204px;
+
+    gap: 8px;
+}
+
+fieldset.field {
+    width: 320px;
+}
+
+.label {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    color: var(--gray);
+}
+
+.input {
+    border-radius: 12px;
+    padding: 12px 16px;
+    width: 204px;
+    height: 44px;
+
+    background: var(--white);
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--main);
+}
+
+.range {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.from, .to {
+    width: 160px;
+    height: 44px;
+    padding: 12px 24px;
+    background: var(--white);
+}
+
+.from::placeholder, .to::placeholder {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--main);
+}
+
+.from {
+    border-right: 1px solid var(--gray-light);
+    border-radius: 12px 0 0 12px;
+}
+
+.to {
+    border-radius: 0 12px 12px 0;
+}
+
+.searchBtn {
+    border-radius: 12px;
+    padding: 12px 51px;
+    width: 156px;
+    height: 44px;
+    margin-top: 24px;
+    
+    background: var(--light-blue);
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--white);
+}
+
+.searchBtn:hover,
+.searchBtn:focus,
+.searchBtn:active {
+    background: var(--dark-blue);
+}
+
+.clearBtn {
+    margin-left: auto;
+    width: 156px;
+    height: 20px;
+    padding: 0px 34px;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--gray);
+}

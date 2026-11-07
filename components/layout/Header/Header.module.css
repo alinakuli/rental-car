@@ -33,6 +33,16 @@
     color: var(--main);
 }
 
+.link:hover {
+    color: var(--light-blue);
+}
+
 .link:active {
+    text-decoration: underline;
+    color: var(--light-blue);
+}
+
+.active {
+    text-decoration: underline;
     color: var(--light-blue);
 }

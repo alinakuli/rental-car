@@ -6,6 +6,7 @@ import { buildPriceOptions } from "@/lib/utils/price";
 
 import { useId, useState } from "react";
 import { useCarFilters } from "@/hooks/useCarFilters";
+import Select from "../Select/Select";
 
 type Props = {
     onSubmit: (filters: CarFilters) => void;
@@ -18,6 +19,9 @@ export default function FilterForm({ onSubmit, onReset }: Props) {
     const { data } = useCarFilters();
     const brands = data?.brands ?? [];
     const prices = data ? buildPriceOptions(data.price.min, data.price.max) : [];
+
+    const brandOptions = brands.map((b) => ({ value: b, label: b }));
+    const priceOptions = prices.map((p) => ({ value: String(p), label: String(p) }));
 
     const [brand, setBrand] = useState("");
     const [price, setPrice] = useState("");
@@ -47,35 +51,35 @@ export default function FilterForm({ onSubmit, onReset }: Props) {
             <div className={css.row}>
                 <div className={css.field}>
                     <label htmlFor={`${id}-brand`} className={css.label}>Car brand</label>
-                    <select id={`${id}-brand`} value={brand} onChange={(e) => setBrand(e.target.value)}>
-                        <option value="">Choose a brand</option>
-                        {brands.map((b) => <option key={b} value={b}>{b}</option>)}
-                    </select>
+                    <Select value={brand} onChange={setBrand} options={brandOptions} placeholder="Choose a brand" />
                 </div>
                 
                 <div className={css.field}>
                     <label htmlFor={`${id}-price`} className={css.label}>Price / 1 hour</label>
-                    <select id={`${id}-price`} value={price} onChange={(e) => setPrice(e.target.value)}>
-                        <option value="">Choose a price</option>
-                        {prices.map((p) => <option key={p} value={p}>{p}</option>)}
-                    </select>
+                    <Select value={price} onChange={setPrice} options={priceOptions} placeholder="Choose a price" />
                 </div>
 
-                <div className={css.kmField}>
-                    <input
-                        type="number"
-                        value={minMileage}
-                        onChange={(e) => setMinMileage(e.target.value)}
-                        placeholder="From"
-                    />
-
-                    <input
-                        type="number"
-                        value={maxMileage}
-                        onChange={(e) => setMaxMileage(e.target.value)}
-                        placeholder="To"
-                    />
-                </div>
+                <fieldset className={css.field}>
+                    <legend className={css.label}>Car mileage / km</legend>
+                    <div className={css.range}>
+                        <input
+                            type="number"
+                            min={0}
+                            value={minMileage}
+                            onChange={(e) => setMinMileage(e.target.value)}
+                            placeholder="From"
+                            className={css.from}
+                        />
+                        <input
+                            type="number"
+                            min={0}
+                            value={maxMileage}
+                            onChange={(e) => setMaxMileage(e.target.value)}
+                            placeholder="To"
+                            className={css.to}
+                        />
+                    </div>
+                </fieldset>
 
                 <button type="submit" className={css.searchBtn}>Search</button>
             </div>

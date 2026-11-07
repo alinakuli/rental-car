@@ -30,9 +30,7 @@ export default function NoCarsFound({ onReset }: Props) {
                 type="button"
                 className={css.btn}
                 onClick={onReset}
-            >
-                Reset Filters
-            </button>
+            >Reset Filters</button>
         </div>
     )
 }

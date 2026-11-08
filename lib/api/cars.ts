@@ -1,12 +1,13 @@
 import { Car, CarFilters, CarsResponse, CarFilterOptions} from "@/types/car";
 import { buildQuery } from "../utils/query";
+import axios from "axios";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const getFilters = async (): Promise<CarFilterOptions> => {
-  const res = await fetch(`${BASE_URL}/cars/filters`);
+  const { data } = await axios.get<CarFilterOptions>(`${BASE_URL}/cars/filters`);
 
-  return res.json();
+  return data;
 } 
 
 export const getCars = async (
@@ -15,15 +16,15 @@ export const getCars = async (
   perPage: number = 12
 ): Promise<CarsResponse> => {
   const query = buildQuery({ ...filters, page, perPage });
-  const res = await fetch(`${BASE_URL}/cars?${query}`);
+  const { data } = await axios.get<CarsResponse>(`${BASE_URL}/cars?${query}`);
   
-  return res.json();
+  return data;
 }
 
 export const getCarById = async (
   id: string,
 ): Promise<Car> => {
-  const res = await fetch(`${BASE_URL}/cars/${id}`);
+  const res = (await fetch(`${BASE_URL}/cars/${id}`)).json();
   
-  return res.json();
+  return res;
 };

@@ -124,16 +124,3 @@
     line-height: 125%;
     color: var(--main);
 }
-
-.rentalForm {
-    border-radius: 16px;
-    padding: 32px;
-    width: 640px;
-    height: 424px;
-    background: var(--white);
-
-
-    text-align: center;
-    grid-column-start: 1;
-    grid-row-start: 2;
-}

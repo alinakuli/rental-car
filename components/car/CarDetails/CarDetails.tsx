@@ -13,6 +13,7 @@ import { getArticle } from "@/lib/utils/format";
 import type { Car } from "@/types/car";
 import Image from "next/image";
 import Container from "@/components/Container/Container";
+import RentalForm from "../RentalForm/RentalForm";
 
 type Props = {
     car: Car;
@@ -32,8 +33,7 @@ export default function CarDetails({ car }: Props) {
                             height={512}
                             className={css.image}
                         />
-                    <div className={css.rentalForm}>Opps!
-                    <br/> The rental form is still in development. </div>
+                    <RentalForm />
                     <div className={css.about}>
                         <div className={css.details}>
                             <h2 className={css.heading}>

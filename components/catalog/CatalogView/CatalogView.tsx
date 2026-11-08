@@ -9,7 +9,7 @@ import CarCard from "../CarCard/CarCard";
 import LoadingCars from "../LoadingCars/LoadingCars";
 import NoCarsFound from "../NoCarsFound/NoCarsFound";
 import FilterForm from "../FilterForm/FilterForm";
-import Error from "@/app/catalog/error";
+import CatalogError from "@/app/catalog/error";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import Container from "@/components/Container/Container";
 
@@ -19,8 +19,10 @@ export default function CatalogView() {
 
     const {
         data,
+        error,
         isPending,
         isError,
+        refetch,
         fetchNextPage,
         hasNextPage,
         isFetchingNextPage,
@@ -39,8 +41,17 @@ export default function CatalogView() {
                 <div className={css.inner}>
                     <FilterForm key={formKey} onSubmit={setFilters} onReset={handleReset}/>
                     
-                    {isPending && <LoadingCars/>}
-                    {isError && <Error/>}
+                    {isPending && <LoadingCars />}
+                    
+                    {isError && (
+                        <CatalogError
+                            error={error}
+                            reset={() => {
+                                void refetch();
+                            }}
+                        />
+                    )}
+                    
                     {!isPending && !isError && cars.length === 0 &&
                         <NoCarsFound onReset={() => setFilters({})} />
                     }

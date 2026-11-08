@@ -1,1 +1,21 @@
- 
+.section {
+    background: var(--bg);
+    width: 100%;
+}
+
+.inner {
+    padding-top: 84px;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.list {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 48px;
+}

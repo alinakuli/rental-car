@@ -3,6 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import css from "./Select.module.css";
 
+import {
+    IoIosArrowDown,
+} from "react-icons/io";
+
 export type Option = { value: string; label: string };
 
 type Props = {
@@ -57,15 +61,7 @@ export default function Select({
                 <span className={selected ? css.value : css.placeholder}>
                     {selected ? selected.label : placeholder}
                 </span>
-                <svg
-                    className={`${css.arrow} ${open ? css.arrowOpen : ""}`}
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    aria-hidden="true"
-                >
-                    <path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                </svg>
+                <IoIosArrowDown className={`${css.arrow} ${open ? css.arrowOpen : ""}`}/>
             </button>
             
             {open && (

@@ -20,7 +20,7 @@ export const getCars = async (
   return res.json();
 }
 
-export const fetchCarById = async (
+export const getCarById = async (
   id: string,
 ): Promise<Car> => {
   const res = await fetch(`${BASE_URL}/cars/${id}`);

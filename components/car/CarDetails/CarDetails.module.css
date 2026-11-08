@@ -1,1 +1,139 @@
- 
+.section {
+    padding: 84px 0;
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.image {
+    border-radius: 16px;
+    width: 640px;
+    height: 512px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.about {
+    border-radius: 16px;
+    padding: 32px 24px;
+    width: 528px;
+    min-height: 968px;
+
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 1;
+
+    background: var(--white);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 68px;
+}
+
+.heading {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    text-align: left;
+    color: var(--main);
+
+    margin-bottom: 8px;
+}
+
+.article {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--gray);
+
+    margin-left: 16px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--main);
+
+    margin-bottom: 16px;
+}
+
+.price {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    color: var(--light-blue);
+
+    margin-bottom: 32px;
+}
+
+.description {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--main);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.subheading {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--main);
+
+    margin-bottom: 20px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--main);
+}
+
+.rentalForm {
+    border-radius: 16px;
+    padding: 32px;
+    width: 640px;
+    height: 424px;
+    background: var(--white);
+
+
+    text-align: center;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}

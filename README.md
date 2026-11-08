@@ -2,8 +2,6 @@
 
 A car rental web application built with Next.js. Users can browse a catalog of cars, filter it by brand, price and mileage, load more listings on demand, open a car's detail page and submit a rental booking.
 
-**Live demo:** [https://rental-car-xi-six.vercel.app/](https://rental-car-xi-six.vercel.app/)
-
 ## Key Features
 
 - **Home page** with a hero banner and a **View Catalog** button that leads to the catalog.

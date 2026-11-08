@@ -1,5 +1,5 @@
 import Loader from "@/components/layout/Loader/Loader"
-import css from "./page.module.css"
+import css from "./loading.module.css"
 
 export default function Loading() {
     const heading = "Loading car details..."

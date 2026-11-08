@@ -1,6 +1,42 @@
-.wrapper {
+.window {
+    position: fixed;
+    inset: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 60vh;
+    justify-content: center;
+    background: rgba(245, 245, 245, 0.89);
+    z-index: 99;
+
+    pointer-events: auto;
+    touch-action: none;
+}
+
+.modal {
+    border-radius: 16px;
+    padding: 48px 96px;
+    width: 543px;
+    height: 288px;
+    margin: auto;
+
+    background: var(--white);
+}
+
+.heading {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    text-align: center;
+    color: var(--main);
+
+    margin-bottom: 16px;
+}
+
+.message {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    color: var(--main);
 }

@@ -1,5 +1,7 @@
 .hero {
-    min-height: 700px;
+    width: 100vw;
+    /* min-height: 700px; */
+    height: calc(100vh - 74px);
     background-image: url("/images/Banner.png");
     background-size: cover;
     background-position: center;

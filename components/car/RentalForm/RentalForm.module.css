@@ -10,3 +10,19 @@
     grid-column-start: 1;
     grid-row-start: 2;
 }
+
+.title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--main);
+}
+
+.subtitle {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--gray);
+}

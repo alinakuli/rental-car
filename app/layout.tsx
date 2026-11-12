@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import type { PropsWithChildren } from "react";
 
 import Header from "@/components/layout/Header/Header";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
@@ -18,7 +19,7 @@ const manrope = Manrope({
   display: "swap",
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: Required<PropsWithChildren>) {
   return (
     <html lang="en" className={manrope.variable}>
       <body>

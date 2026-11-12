@@ -33,7 +33,7 @@ export default function CarDetails({ car }: Props) {
                             height={512}
                             className={css.image}
                         />
-                    <RentalForm />
+                    <RentalForm carId={car.id} />
                     <div className={css.about}>
                         <div className={css.details}>
                             <h2 className={css.heading}>

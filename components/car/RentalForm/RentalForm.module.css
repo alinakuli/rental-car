@@ -1,12 +1,12 @@
-.rentalForm {
+.form {
     border-radius: 16px;
     padding: 32px;
     width: 640px;
-    height: 424px;
+    min-height: 424px;
     background: var(--white);
 
 
-    text-align: center;
+    /* text-align: center; */
     grid-column-start: 1;
     grid-row-start: 2;
 }
@@ -17,6 +17,8 @@
     font-size: 20px;
     line-height: 120%;
     color: var(--main);
+
+    margin-bottom: 8px;
 }
 
 .subtitle {
@@ -25,4 +27,131 @@
     font-size: 16px;
     line-height: 125%;
     color: var(--gray);
+
+    margin-bottom: 24px;
+}
+
+.fieldGroup, .textareaGroup {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.textareaGroup {
+    margin-bottom: 24px;
+}
+
+.input, .textarea {
+    border-radius: 12px;
+    padding: 12px 20px;
+    width: 100%;
+    height: 48px;
+
+    background: var(--inputs);
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--main);
+}
+
+.input {
+    display: block;
+    margin-bottom: 0;
+}
+
+.textarea {
+    padding: 12px 20px 56px;
+    height: 88px;
+
+    resize: none;
+    scrollbar-width: none;
+}
+
+.textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.label {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--gray);
+    background: var(--inputs);
+
+    position: absolute;
+    padding: 0;
+    top: 12px;
+    left: 20px;
+    border-radius: 8px;
+    height: 16px;
+    pointer-events: none;
+    transition: top 0.2s,
+    left 0.2s,
+        font-size 0.2s,
+        padding 0.2s;
+}
+
+.input:focus+.label,
+.input:not(:placeholder-shown)+.label,
+.textarea:focus+.label,
+.textarea:not(:placeholder-shown)+.label {
+    top: -6px;
+    left: 12px;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+.error {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    color: var(--error);
+
+    display: block;
+    margin: 0;
+}
+
+.errorMark {
+    width: 24px;
+    height: 24px;
+    color: var(--error);
+
+    position: absolute;
+    top: 12px;
+    right: 20px;
+}
+
+.textareaGroup .errorMark {
+    top: 32px;
+}
+
+.errorInput {
+    border: 1px solid var(--error);
+    background: var(--error-light);
+}
+
+.errorLabel {
+    color: var(--error);
+    background: var(--error-light);
+}
+
+.btn {
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    width: 100%;
+    height: 44px;
+    background: var(--light-blue);
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--white);
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    background: var(--dark-blue);
 }

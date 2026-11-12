@@ -8,6 +8,7 @@ import { isAxiosError } from "axios";
 import { createBooking } from "@/lib/api/bookings";
 import toast from "react-hot-toast";
 import { BookingFormData } from "@/types/booking";
+import { BsExclamationCircle } from "react-icons/bs";
 
 
 export default function RentalForm({ carId }: { carId: string }) {
@@ -80,11 +81,17 @@ export default function RentalForm({ carId }: { carId: string }) {
                     id="name"
                     type="text"
                     name="name"
-                    placeholder="Name*"
-                    className={css.input}
+                    placeholder=""
+                    className={`${css.input} ${errors.name ? css.errorInput : ""}`}
                     aria-invalid={!!errors.name}
                 />
-                {errors.comment && <span className={css.error}>{errors.comment}</span>}
+                <label
+                    htmlFor="name"
+                    className={`${css.label} ${errors.name ? css.errorLabel : ""}`}
+                >Name*</label>
+                
+                {errors.name && <span className={css.error}>{errors.name}</span>}
+                {errors.name && <BsExclamationCircle className={css.errorMark} />}
             </div>
 
             <div className={css.fieldGroup}>
@@ -92,23 +99,34 @@ export default function RentalForm({ carId }: { carId: string }) {
                     id="email"
                     type="email"
                     name="email"
-                    placeholder="Email*"
-                    className={css.input}
+                    placeholder=""
+                    className={`${css.input} ${errors.email ? css.errorInput : ""}`}
                     aria-invalid={!!errors.email}
                 />
-                {errors.comment && <span className={css.error}>{errors.comment}</span>}
+                <label
+                    htmlFor="email"
+                    className={`${css.label} ${errors.email ? css.errorLabel : ""}`}
+                >Email*</label>
+
+                {errors.email && <span className={css.error}>{errors.email}</span>}
+                {errors.email && <BsExclamationCircle className={css.errorMark} />}
             </div>
 
-            <div className={css.fieldGroup}>
+            <div className={css.textareaGroup}>
                 <textarea
                     id="comment"
                     name="comment"
-                    rows={5}
-                    placeholder="Comment*"
-                    className={css.textarea}
+                    rows={3}
+                    placeholder=""
+                    className={`${css.textarea} ${errors.comment ? css.errorInput : ""}`}
                     aria-invalid={!!errors.comment}
                 />
+                <label
+                    htmlFor="comment"
+                    className={`${css.label} ${errors.comment ? css.errorLabel : ""}`}
+                >Comment*</label>
                 {errors.comment && <span className={css.error}>{errors.comment}</span>}
+                {errors.comment && <BsExclamationCircle className={css.errorMark} />}
             </div>
 
             <button
@@ -119,9 +137,6 @@ export default function RentalForm({ carId }: { carId: string }) {
                 {isPending ? "Sending..." : "Send"}
             </button>
 
-            </form>
-            
-
-            
+            </form>                        
     )
 }

@@ -79,7 +79,7 @@ legend {
   padding: 0;
 }
 
-button, input, select {
+button, input, textarea, select {
   appearance: none;
   background: none;
   border: 0;
